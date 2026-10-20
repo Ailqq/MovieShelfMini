@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SchoolLibraryMini.Data.Entities
 {
-    internal class Movie
+    public class Movie
     {
         [Key]
         public Guid MovieId { get; set; }

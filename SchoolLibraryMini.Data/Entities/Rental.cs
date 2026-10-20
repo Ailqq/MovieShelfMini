@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SchoolLibraryMini.Data.Entities
 {
-    internal class Rental
+    public class Rental
     {
         [ForeignKey("Movie")]
         public Guid MovieId { get; set; }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SchoolLibraryMini.Data.Entities
 {
-    internal class Director
+    public class Director
     {
         [Key]
         public Guid DirectorId { get; set; }

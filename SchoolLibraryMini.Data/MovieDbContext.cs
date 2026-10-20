@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SchoolLibraryMini.Data
 {
-    internal class MovieDbContext: DbContext
+    public class MovieDbContext: DbContext
     {
         public MovieDbContext(DbContextOptions options) : base(options)
         {

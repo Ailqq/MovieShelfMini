@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SchoolLibraryMini.Data.Entities
 {
-    internal class Viewer
+    public class Viewer
     {
         [Key]
         public Guid ViewerId { get; set; }
