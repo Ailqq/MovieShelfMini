@@ -1,5 +1,29 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿
+<form method="post" action="movies/create">
+    <div class="form-group">
+        <label for="movie_title">Заглавие на филм</label>
+        <input type="text" class="form-control" name="title" id="movie_title" placeholder="въведете името на филма тук">
+    </div>
+
+    <div class="form-group">
+        <label for="movie_director">Режисьор</label>
+        <input type="text" class="form-control" name="director" id="movie_director">
+    </div>
+
+    <div class="form-group">
+        <label for="movie_genre">Жанр</label>
+        <input type="text" class="form-control" name="genre" id="movie_genre">
+    </div>
+
+    <div class="form-group">
+        <label for="movie_year">Година</label>
+        <input type="number" class="form-control" name="year" id="movie_year">
+    </div>
+
+    <div class="form-group">
+        <label for="movie_duration">Продължителност (мин)</label>
+        <input type="number" class="form-control" name="duration" id="movie_duration">
+    </div>
+
+    <button type="submit" class="btn btn-primary my-3">Запази</button>
+</form>
