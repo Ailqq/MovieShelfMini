@@ -41,11 +41,10 @@ namespace SchoolLibraryMini.Data
                 entity.Property(m => m.Genre)
                     .IsRequired();
 
-                
-                entity.HasOne<Director>()
+                entity.HasOne(m => m.Director)
                     .WithMany(d => d.Movies)
                     .HasForeignKey(m => m.DirectorId)
-                    .OnDelete(DeleteBehavior.Cascade);
+                    .OnDelete(DeleteBehavior.Restrict);
             });
 
             modelBuilder.Entity<Viewer>(entity =>

@@ -10,8 +10,8 @@ namespace MovieShelfMini.WEB
             var builder = WebApplication.CreateBuilder(args);
 
             builder.Services.AddDbContext<MovieDbContext>(options =>
-                            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-            builder.Services.AddControllersWithViews();
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"),
+          x => x.MigrationsAssembly("SchoolLibraryMini.Data")));
 
             var app = builder.Build();
 
