@@ -1,6 +1,5 @@
 using Microsoft.EntityFrameworkCore;
 using MovieShelfMini.Services;
-using SchoolLibraryMini.Data;
 using MovieShelfMini.Services.Contracts;
 using MovieShelfMini.Data;
 
