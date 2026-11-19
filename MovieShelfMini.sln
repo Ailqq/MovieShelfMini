@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieShelfMini.WEB", "MovieShelfMini.WEB\MovieShelfMini.WEB.csproj", "{FFFBC39F-1114-42CA-9454-AB18E536F5CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieShelfMini.WEB", "MovieShelfMini.WEB\MovieShelfMini.WEB.csproj", "{FFFBC39F-1114-42CA-9454-AB18E536F5CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolLibraryMini.Data", "SchoolLibraryMini.Data\SchoolLibraryMini.Data.csproj", "{660D3FF5-3742-4725-B0E8-CBA47FA5D6F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieShelfMini.Data", "SchoolLibraryMini.Data\MovieShelfMini.Data.csproj", "{660D3FF5-3742-4725-B0E8-CBA47FA5D6F6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
