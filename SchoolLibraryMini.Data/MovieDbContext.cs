@@ -1,4 +1,4 @@
-﻿using SchoolLibraryMini.Data.Entities;
+﻿using MovieShelfMini.Data;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -6,13 +6,14 @@ using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
-
-namespace SchoolLibraryMini.Data
+using MovieShelfMini.Data.Entities;
+namespace MovieShelfMini.Data
 {
     public class MovieDbContext: DbContext
     {
         public MovieDbContext(DbContextOptions options) : base(options)
         {
+
         }
 
         public DbSet<Director> Directors => Set<Director>();

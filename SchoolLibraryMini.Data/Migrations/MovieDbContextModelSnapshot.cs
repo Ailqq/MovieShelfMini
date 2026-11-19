@@ -4,15 +4,16 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using SchoolLibraryMini.Data;
+using MovieShelfMini.Data;
 
 #nullable disable
 
-namespace SchoolLibraryMini.Data.Migrations
+namespace MovieShelfMini.Data.Migrations
 {
     [DbContext(typeof(MovieDbContext))]
     partial class MovieDbContextModelSnapshot : ModelSnapshot
     {
+        
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
@@ -22,7 +23,7 @@ namespace SchoolLibraryMini.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("SchoolLibraryMini.Data.Entities.Director", b =>
+            modelBuilder.Entity("MovieShelfMini.Data.Entities.Director", b =>
                 {
                     b.Property<Guid>("DirectorId")
                         .ValueGeneratedOnAdd()
@@ -38,7 +39,7 @@ namespace SchoolLibraryMini.Data.Migrations
                     b.ToTable("Directors");
                 });
 
-            modelBuilder.Entity("SchoolLibraryMini.Data.Entities.Movie", b =>
+            modelBuilder.Entity("MovieShelfMini.Data.Entities.Movie", b =>
                 {
                     b.Property<Guid>("MovieId")
                         .ValueGeneratedOnAdd()
@@ -70,7 +71,7 @@ namespace SchoolLibraryMini.Data.Migrations
                     b.ToTable("Movies");
                 });
 
-            modelBuilder.Entity("SchoolLibraryMini.Data.Entities.Rental", b =>
+            modelBuilder.Entity("MovieShelfMini.Data.Entities.Rental", b =>
                 {
                     b.Property<Guid>("MovieId")
                         .HasColumnType("uniqueidentifier");
@@ -91,7 +92,7 @@ namespace SchoolLibraryMini.Data.Migrations
                     b.ToTable("Rentals");
                 });
 
-            modelBuilder.Entity("SchoolLibraryMini.Data.Entities.Viewer", b =>
+            modelBuilder.Entity("MovieShelfMini.Data.Entities.Viewer", b =>
                 {
                     b.Property<Guid>("ViewerId")
                         .ValueGeneratedOnAdd()
@@ -107,9 +108,9 @@ namespace SchoolLibraryMini.Data.Migrations
                     b.ToTable("Viewers");
                 });
 
-            modelBuilder.Entity("SchoolLibraryMini.Data.Entities.Movie", b =>
+            modelBuilder.Entity("MovieShelfMini.Data.Entities.Movie", b =>
                 {
-                    b.HasOne("SchoolLibraryMini.Data.Entities.Director", "Director")
+                    b.HasOne("MovieShelfMini.Data.Entities.Director", "Director")
                         .WithMany("Movies")
                         .HasForeignKey("DirectorId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -118,15 +119,15 @@ namespace SchoolLibraryMini.Data.Migrations
                     b.Navigation("Director");
                 });
 
-            modelBuilder.Entity("SchoolLibraryMini.Data.Entities.Rental", b =>
+            modelBuilder.Entity("MovieShelfMini.Data.Entities.Rental", b =>
                 {
-                    b.HasOne("SchoolLibraryMini.Data.Entities.Movie", "Movie")
+                    b.HasOne("MovieShelfMini.Data.Entities.Movie", "Movie")
                         .WithMany("Rentals")
                         .HasForeignKey("MovieId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("SchoolLibraryMini.Data.Entities.Viewer", "Viewer")
+                    b.HasOne("MovieShelfMini.Data.Entities.Viewer", "Viewer")
                         .WithMany("Rentals")
                         .HasForeignKey("ViewerId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -137,21 +138,22 @@ namespace SchoolLibraryMini.Data.Migrations
                     b.Navigation("Viewer");
                 });
 
-            modelBuilder.Entity("SchoolLibraryMini.Data.Entities.Director", b =>
+            modelBuilder.Entity("MovieShelfMini.Data.Entities.Director", b =>
                 {
                     b.Navigation("Movies");
                 });
 
-            modelBuilder.Entity("SchoolLibraryMini.Data.Entities.Movie", b =>
+            modelBuilder.Entity("MovieShelfMini.Data.Entities.Movie", b =>
                 {
                     b.Navigation("Rentals");
                 });
 
-            modelBuilder.Entity("SchoolLibraryMini.Data.Entities.Viewer", b =>
+            modelBuilder.Entity("MovieShelfMini.Data.Entities.Viewer", b =>
                 {
                     b.Navigation("Rentals");
                 });
 #pragma warning restore 612, 618
         }
+        
     }
 }

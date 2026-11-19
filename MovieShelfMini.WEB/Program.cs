@@ -1,5 +1,10 @@
 using Microsoft.EntityFrameworkCore;
+using MovieShelfMini.Services;
 using SchoolLibraryMini.Data;
+using MovieShelfMini.Services.Contracts;
+using MovieShelfMini.Data;
+
+
 
 namespace MovieShelfMini.WEB
 {
@@ -9,17 +14,20 @@ namespace MovieShelfMini.WEB
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            builder.Services.AddControllersWithViews();
+
             builder.Services.AddDbContext<MovieDbContext>(options =>
-                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"),
-          x => x.MigrationsAssembly("SchoolLibraryMini.Data")));
+                options.UseSqlServer(
+                    builder.Configuration.GetConnectionString("DefaultConnection"),
+                    x => x.MigrationsAssembly("SchoolLibraryMini.Data")));
+
+            builder.Services.AddScoped<IMovieService, MovieService>();
 
             var app = builder.Build();
 
-            
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SchoolLibraryMini.Data.Entities
+namespace MovieShelfMini.Data.Entities
 {
     public class Movie
     {

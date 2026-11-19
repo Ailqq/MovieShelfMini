@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
-
+using MovieShelfMini.Data;
 #nullable disable
 
-namespace SchoolLibraryMini.Data.Migrations
+namespace MovieShelfMini.Data.Migrations
 {
     /// <inheritdoc />
     public partial class InitialMigration : Migration

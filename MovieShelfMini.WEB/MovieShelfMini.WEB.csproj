@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MovieShelfMini.Services\MovieShelfMini.Services.csproj" />
     <ProjectReference Include="..\SchoolLibraryMini.Data\MovieShelfMini.Data.csproj" />
   </ItemGroup>
 

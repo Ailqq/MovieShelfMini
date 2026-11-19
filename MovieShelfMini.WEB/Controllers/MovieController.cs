@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MovieShelfMini.Services.Contracts;
 
 namespace MovieShelfMini.WEB.Controllers
 {

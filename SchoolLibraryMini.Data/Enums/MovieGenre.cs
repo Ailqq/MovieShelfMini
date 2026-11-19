@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SchoolLibraryMini.Data.Enums
+namespace MovieShelfMini.Data.Enums
 {
     public enum MovieGenre
     {
