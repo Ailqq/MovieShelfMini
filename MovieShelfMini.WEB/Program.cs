@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using MovieShelfMini.Services;
 using MovieShelfMini.Services.Contracts;
 using MovieShelfMini.Data;
+using MovieShelfMini.Data.Migrations;
 
 
 
@@ -23,6 +24,12 @@ namespace MovieShelfMini.WEB
             builder.Services.AddScoped<IMovieService, MovieService>();
 
             var app = builder.Build();
+            using (var scope = app.Services.CreateScope())
+            {
+                var dbContext = scope.ServiceProvider.GetRequiredService<MovieDbContext>();
+                dbContext.Database.Migrate();
+                DemoData.Seed(dbContext);
+            }
 
             if (!app.Environment.IsDevelopment())
             {

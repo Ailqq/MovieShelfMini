@@ -1,0 +1,42 @@
+﻿
+@using MovieShelfMini.Data.Entities
+@model IEnumerable<Movie>
+
+@{
+    ViewData["Title"] = "Филми";
+}
+
+<h1>Филми</h1>
+
+<a asp-controller="Movie" asp-action="Create" class="btn btn-primary mb-3">
+    Добави нов филм
+</a>
+
+@if (Model is null || !Model.Any())
+{
+        <p>Все още няма добавени филми.</p>
+}
+else
+{
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Заглавие</th>
+                    <th>Жанр</th>
+                    <th>Година</th>
+                    <th>Продължителност (мин)</th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (var movie in Model)
+            {
+                        <tr>
+                            <td>@movie.Title</td>
+                            <td>@movie.Genre</td>
+                            <td>@movie.Year</td>
+                            <td>@movie.Duration</td>
+                        </tr>
+            }
+            </tbody>
+        </table>
+}
