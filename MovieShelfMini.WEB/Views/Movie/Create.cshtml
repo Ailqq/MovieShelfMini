@@ -1,5 +1,6 @@
 ﻿
-<form method="post" action="movies/create">
+<form method="post" action="create">
+    @Html.AntiForgeryToken()
     <div class="form-group">
         <label for="movie_title">Заглавие на филм</label>
         <input type="text" class="form-control" name="title" id="movie_title" placeholder="въведете името на филма тук">

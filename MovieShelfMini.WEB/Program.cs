@@ -19,7 +19,7 @@ namespace MovieShelfMini.WEB
             builder.Services.AddDbContext<MovieDbContext>(options =>
                 options.UseSqlServer(
                     builder.Configuration.GetConnectionString("DefaultConnection"),
-                    x => x.MigrationsAssembly("SchoolLibraryMini.Data")));
+                    x => x.MigrationsAssembly("MovieShelfMini.Data")));
 
             builder.Services.AddScoped<IMovieService, MovieService>();
 
